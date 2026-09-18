@@ -4,11 +4,11 @@
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** [movie-explorer-ten-phi.vercel.app]
+🔗 **Live Website:** [[Live Website link](https://movie-explorer-ten-phi.vercel.app/)]
 
 ## 📂 Repository
 
-🔗 **GitHub:** [Add your GitHub repository link here]
+🔗 **GitHub:** [[GitHub repository link](https://github.com/ahFuhad/Movie-Explorer)]
 
 ---
 
