@@ -1,31 +1,105 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
-function Navbar () {
+function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false)
+
     return (
-        <nav  className="flex items-center justify-between px-6 py-4">
-            
-            <h1 className="text-2xl font-bold">
-                MovieExplorer
-            </h1>
+        <nav className="bg-white shadow-sm">
+            <div className="flex items-center justify-between px-6 py-5">
 
-            <ul className=" flex gap-6 text-2xl font-bold">
-                <li className="cursor-pointer hover:text-blue-600">
-                    Home
-                </li>
-                <li className="cursor-pointer hover:text-blue-600">
-                    Movies
-                </li>
-                <li className="cursor-pointer hover:text-blue-600">
-                    About
-                </li>
-            </ul>
-
-            <Link
-                to="/movies"
-                className="shrink-0 whitespace-nowrap rounded-lg bg-blue-600 px-6 py-3 text-white  hover:bg-blue-700"
+                <Link
+                to="/"
+                className="text-2xl font-bold text-slate-900"
                 >
-                Explore Movies
-            </Link>
+                    MovieExplorer
+                </Link>
+
+                {/* In Desktop */}
+                <ul className="hidden md:flex items-center gap-8 text-lg font-semibold">
+                <li>
+                    <Link to="/" className="hover:text-blue-600 transition">
+                        Home
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to="/movies" className="hover:text-blue-600 transition">
+                        Movies
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to="/about" className="hover:text-blue-600 transition">
+                        About
+                    </Link>
+                </li>
+                </ul>
+
+                {/* Desktop button */}
+                <Link
+                to="/movies"
+                className="hidden md:block rounded-lg bg-blue-600 px-5 py-3 font-medium text-white hover:bg-blue-700 transition"
+                >
+                    Explore Movies
+                </Link>
+
+                <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="md:hidden text-2xl"
+                >
+                    ☰
+                </button>
+            </div>
+
+            {/* In Mobile */}
+            {menuOpen && (
+                <div className="md:hidden border-t px-6 py-4">
+                    <ul className="flex flex-col gap-4 text-lg font-semibold">
+
+                        <li>
+                            <Link
+                                to="/"
+                                onClick={() => setMenuOpen(false)}
+                                className="block hover:text-blue-600"
+                            >
+                                Home
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/movies"
+                                onClick={() => setMenuOpen(false)}
+                                className="block hover:text-blue-600"
+                            >
+                                Movies
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/about"
+                                onClick={() => setMenuOpen(false)}
+                                className="block hover:text-blue-600"
+                            >
+                                About
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/movies"
+                                onClick={() => setMenuOpen(false)}
+                                className="inline-block rounded-lg bg-blue-600 px-5 py-3 text-white"
+                            >
+                                Explore Movies
+                            </Link>
+                        </li>
+
+                    </ul>
+                </div>
+            )}
         </nav>
     )
 }
