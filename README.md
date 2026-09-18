@@ -1,75 +1,54 @@
-# React + TypeScript + Vite
+# 🎬 MovieExplorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Discover movies and TV shows, search for your favorites, and explore detailed information — all in one place.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Live Website:** [movie-explorer-ten-phi.vercel.app]
 
-## React Compiler
+## 📂 Repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 **GitHub:** [Add your GitHub repository link here]
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🏠 Beautiful responsive Home page
+- 🎬 Browse movies and TV shows
+- 🔍 Search shows by title
+- ⭐ Display ratings
+- 📅 Display release/premiere information
+- 🖼️ Show posters and images
+- 📖 View detailed show information
+- 💬 Interactive movie/show details modal
+- 📱 Fully responsive design
+- 🍔 Responsive mobile navigation menu
+- ⚡ Dynamic data loading using API
+- 🚦 Loading state while fetching data
+- ❌ Error handling for failed requests
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Technologies Used
 
-```
+| Technology | Purpose |
+|---|---|
+| ⚛️ React | Building the user interface |
+| 📘 TypeScript | Type-safe development |
+| 🎨 Tailwind CSS | Styling and responsive design |
+| 🧭 React Router | Page navigation |
+| ⚡ Vite | Development and build tool |
+| 🌐 TVmaze API | Movie/TV show data |
+| 📡 Fetch API | Fetching data from the API |
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔌 API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+This project uses the free **TVmaze API**.
 
-```
+### Get All Shows
+
+```text
+https://api.tvmaze.com/shows
